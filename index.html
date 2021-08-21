@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <title>南京聊天室</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="keywords" content="南京聊天室" />
+    <meta name="description" content="南京聊天室" />
+    <meta name="copyright" content="南京聊天室,cc.asai.cc" />
+    <link type="text/css" href="css.css" rel="stylesheet" />
+  </head>
+  <body>
+    <div id="area">
+      <h1>南京聊天室<u>https://cc.asai.cc/</u></h1>
+
+      <div id="chat">
+        <div id="menu" class="menu">
+          <div onclick="menuClick(0)">聊天室<sup id="saycount"></sup></div>
+          <div onclick="menuClick(1)">在线人员<sup id="usercount">1</sup></div>
+          <div onclick="menuClick(2)">我的信息<sup id="mycount"></sup></div>
+        </div>
+
+        <div id="cardarea">
+          <div id="card">loading......</div>
+        </div>
+
+        <div id="userform">
+          <label for="tx">
+            头像：
+            <select id="tx" name="tx">
+              <script>
+                function getTxOption() {
+                  let i = 0;
+                  let strDom = "";
+                  while (i < 95) {
+                    strDom += `<option value=${i}>头像${i}</option>`;
+                    i++;
+                  }
+                  return strDom;
+                }
+                document.write(getTxOption());
+              </script>
+            </select>
+            <button onclick="cardShowTx(tx.value)">查看头像</button>
+          </label>
+          <label for="mz">
+            名字：
+            <input type="text" id="mz" name="mz" maxlength="20" value="" />
+          </label>
+          <label for="sr">
+            生日：
+            <input type="date" id="sr" name="sr" maxlength="20" value="" />
+          </label>
+          <label for="cs">
+            城市：
+            <input type="text" id="cs" name="cs" maxlength="10" value="" />
+          </label>
+          <label for="qm">
+            签名：
+            <input type="text" id="qm" name="qm" maxlength="60" value="" />
+          </label>
+          <button onclick="userSendSubmit()">更新个人信息</button>
+        </div>
+
+        <div id="user"><div class="user">用户列表</div></div>
+
+        <div id="msg">
+          <div class="msgg">欢迎光临南京聊天室https://cc.asai.cc/。</div>
+        </div>
+
+        <div id="msgform">
+          <div id="msgformtool">
+            <div id="msgformtools">
+              工具箱<button onclick="localClear()">清空</button>
+            </div>
+          </div>
+          <div id="msgformsay">
+            <label id="msgformsaytool" for="xx" onclick="msgTool()">＋</label>
+            <input type="text" id="xx" name="xx" maxlength="200" value="" />
+            <button onclick="msgSendSubmit()">发送</button>
+          </div>
+        </div>
+      </div>
+      <script src="config.js"></script>
+      <script src="wsInit.js"></script>
+      <script src="wsClient.js"></script>
+    </div>
+  </body>
+</html>
