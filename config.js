@@ -1,5 +1,5 @@
 var config = {
-  wsIp: "ws://localhost:",
+  wsIp: "ws://tc.asai.cc:",
   wsPortMsg: 909,
   wsPortUser: 900,
   httpPort: 1909,
